@@ -70,4 +70,4 @@ $(function(){
    $('.shopping-list').on('click', '.shopping-item-delete', function(event) {
     $(this).closest('li').remove();
   });
-});
+});sdnfdslf 
