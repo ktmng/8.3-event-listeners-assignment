@@ -1,4 +1,4 @@
-$(function assignment(){
+$(function(){
     //LOOK AT FORM
     $('js-shopping-list-form').submit( event => {
         //STOP DEFAULT FORM SUBMIT
@@ -30,31 +30,28 @@ $(function assignment(){
         </div>
         </li>`
         );
-        
-        //MAKE CHECKED ITEMS CROSSED OUT
-        //target all items under <ul> (class=shopping-list)
-        //if check button clicked (class=shopping-list-toggle)
-          //look at closest <li> [.closest()]
-          //look at all span's (class=shopping-item) [.find()]
-          //change span class to class="shopping-item_checked"
-            //like for milk
-        //replace event.currentTarget with this (required)
-        //.closest(): For each element in the set, get the first element 
-          //that matches the selector by testing the element itself 
-          //and traversing up through its ancestors in the DOM tree
-        $('.shopping-list').on('click', '.shopping-item-toggle', event => {
-          $(this).closest('li').find('.shopping-item').removeClass('shopping-item').addClass('shopping-item__checked');
-        });
+    });
+    //MAKE CHECKED ITEMS CROSSED OUT
+    //target all items under <ul> (class=shopping-list)
+    //if check button clicked (class=shopping-list-toggle)
+      //look at closest <li> [.closest()]
+      //look at all span's (class=shopping-item) [.find()]
+      //change span class to class="shopping-item_checked"
+        //like for milk
+    //replace event.currentTarget with this (required)
+    //.closest(): For each element in the set, get the first element 
+      //that matches the selector by testing the element itself 
+      //and traversing up through its ancestors in the DOM tree
+    $('.shopping-list').on('click', '.shopping-item-toggle', event => {
+      $(this).closest('li').find('.shopping-item').removeClass('shopping-item').addClass('shopping-item__checked');
+    });
 
-        //DELETE ITEMS WHEN DELETE IS CLICKED 
-        //target all items under <ul> (class=shopping-list)
-        //if delete button clicked (class=shopping-item-delete)
-          //look at closest <li> [.closest()]
-          //remove the whole <li>
-        $('.shopping-list').on('click', '.shopping-item-delete', event => {
-          $(this).closest('li').remove();
-        });
-    })
+    //DELETE ITEMS WHEN DELETE IS CLICKED 
+    //target all items under <ul> (class=shopping-list)
+    //if delete button clicked (class=shopping-item-delete)
+      //look at closest <li> [.closest()]
+      //remove the whole <li>
+    $('.shopping-list').on('click', '.shopping-item-delete', event => {
+       $(this).closest('li').remove();
+    });
 });
-
-$(assignment);
